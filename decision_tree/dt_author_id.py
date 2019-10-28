@@ -35,7 +35,7 @@ clf.predict(features_test)
 
 #print "Number of Features : ", len(features_train[0])
 
-#acc = clf.score(features_test, labels_test)
+acc = clf.score(features_test, labels_test)
 print "The accuracy is : ", acc
 
 #########################################################
