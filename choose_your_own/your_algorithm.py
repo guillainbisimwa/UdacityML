@@ -24,15 +24,23 @@ plt.scatter(grade_slow, bumpy_slow, color = "r", label="slow")
 plt.legend()
 plt.xlabel("bumpiness")
 plt.ylabel("grade")
-plt.show()
+#plt.show()
 ################################################################################
 
 
 ### your code here!  name your classifier object clf if you want the 
 ### visualization code (prettyPicture) to show you the decision boundary
+from sklearn.ensemble import RandomForestClassifier
 
+clf = RandomForestClassifier(n_estimators=400, min_samples_split=40)
+clf.fit(features_train, labels_train)
+clf.predict(features_test)
+print "Random Forest accuracy: ", clf.score(features_test, labels_test)
 
-
+# from sklearn.ensemble import GradientBoostingClassifier
+# clf = GradientBoostingClassifier(n_estimators=500, learning_rate=1.0, max_depth=1, random_state=0)
+# clf.fit(features_train, labels_train)
+# print "GB accuracy: ", clf.score(features_test, labels_test)
 
 
 
