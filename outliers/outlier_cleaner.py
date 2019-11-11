@@ -12,9 +12,19 @@ def outlierCleaner(predictions, ages, net_worths):
     """
     
     cleaned_data = []
-
     ### your code goes here
-
+    i = 0
+    for net_worth in net_worths:
+        error = abs(net_worth - predictions[i])
+        
+        list_inner = [ages[i], net_worth, error]
+        if error <50 :
+            cleaned_data.append(list_inner)
+        i += 1
+        print error
+        print ""
+        print ""
+        
     
     return cleaned_data
 
