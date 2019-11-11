@@ -47,9 +47,9 @@ for features in enron_data.values():
 
     if features["poi"] == True and features["total_payments"] == "NaN":
         total_pay_of_poi += 1
-    # print features
-    # print ""
-    # print ""
+    print features
+    print ""
+    print ""
     
 print "Number of False POI: ", poi_f
 print "isna mail: ", with_mail
