@@ -28,7 +28,7 @@ ages_train, ages_test, net_worths_train, net_worths_test = train_test_split(ages
 
 from sklearn import linear_model
 reg = linear_model.LinearRegression()
-reg.fit(ages_test, net_worths_test)
+reg.fit(ages_train, net_worths_train)
 
 print "SCORE: ", reg.score(ages_test, net_worths_test)
 print "Intersept: ", reg.intercept_
@@ -73,7 +73,7 @@ if len(cleaned_data) > 0:
         reg.fit(ages, net_worths)
         plt.plot(ages, reg.predict(ages), color="blue")
         #New slope
-        print "SCORE: ", reg.score(ages, net_worths)
+        print "SCORE: ", reg.score(ages_test, net_worths_test)
         print "Intersept: ", reg.intercept_
         print "Slope: ", reg.coef_
     except NameError:
