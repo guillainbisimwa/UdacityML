@@ -64,8 +64,11 @@ plt.show()
 
 ### cluster here; create predictions of the cluster labels
 ### for the data and store them to a list called pred
-
-
+from sklearn.cluster import KMeans
+km = KMeans(n_clusters=5)
+pred = []
+pred = km.fit_predict(finance_features)
+#pred = km.predict(finance_features)
 
 
 ### rename the "name" parameter when you change the number of features
