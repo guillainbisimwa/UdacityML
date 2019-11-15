@@ -48,11 +48,45 @@ data_dict.pop("TOTAL", 0)
 ### can be any key in the person-level dictionary (salary, director_fees, etc.) 
 feature_1 = "salary"
 feature_2 = "exercised_stock_options"
+feature_3 = "total_payments"
 poi  = "poi"
 features_list = [poi, feature_1, feature_2]
 data = featureFormat(data_dict, features_list )
 poi, finance_features = targetFeatureSplit( data )
+f_liste = []
+f_liste1 = []
+f_liste2 = []
 
+# for f in finance_features:
+#     print f[0]
+#     f_liste.append(f[0])
+#     print ""
+#     print ""
+# print "Max ", max(f_liste)
+# print "Min ", min(f_liste)
+print len(finance_features)
+for f in finance_features:
+    #print f
+    if f[0] > 0:
+        f_liste1.append(f[0])
+    if f[1] > 0:
+        f_liste2.append(f[1])
+
+
+for features in data_dict.values():
+    if features["exercised_stock_options"] != "NaN":
+        f_liste.append(features["exercised_stock_options"])
+        #print features["exercised_stock_options"]
+        #print ""
+        #print ""
+print "Max ", max(f_liste)
+print "Min ", min(f_liste)
+
+print "Max1 ", max(f_liste1)
+print "Min1 ", min(f_liste1)
+
+print "Max2 ", max(f_liste2)
+print "Min2 ", min(f_liste2)
 
 ### in the "clustering with 3 features" part of the mini-project,
 ### you'll want to change this line to 
@@ -68,12 +102,11 @@ from sklearn.cluster import KMeans
 km = KMeans(n_clusters=5)
 pred = []
 pred = km.fit_predict(finance_features)
-#pred = km.predict(finance_features)
 
 
 ### rename the "name" parameter when you change the number of features
 ### so that the figure gets saved to a different file
 try:
-    Draw(pred, finance_features, poi, mark_poi=False, name="clusters.pdf", f1_name=feature_1, f2_name=feature_2)
+    Draw(pred, finance_features, poi, mark_poi=False, name="clusters3.pdf", f1_name=feature_1, f2_name=feature_2)
 except NameError:
     print "no predictions object named pred found, no clusters to plot"
