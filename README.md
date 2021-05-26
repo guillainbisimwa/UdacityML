@@ -44,6 +44,7 @@ EM algorithm, cluster validation, external indices, internal indices, adjusted r
 Topics covered in this section:
 
 - Neuronal networks
+
 Perceptron trick, perceptron algorithm, sigmoid activation, maximum likelihood, cross entropy, logistic regression, perceptron and gradient descent
 - Deep neural networks
 Regularization, dropout, vanishing gradients and activation function, momentum, keras optimisers
@@ -68,3 +69,23 @@ NNs as value functions, Monte Carlo learning, TD learning, Q-learning, Sarsa vs.
 - Policy-based methods
 Policy function approximation, stochastic policy search, policy gradients, Monte Carlo policy gradients, constrained policy gradients
 - Actor-critic methods
+
+## Author
+
+👤 **Guillain Bisimwa**
+
+- Github : [@guillainbisimwa](https://github.com/guillainbisimwa)
+- Twitter : [@gullain_bisimwa](https://twitter.com/gullain_bisimwa)
+- Linkedin : [guillain-bisimwa](https://www.linkedin.com/in/guillain-bisimwa-8a8b7a7b/)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+## Acknowledgments
+
+- UDACITY
+
+## Show your support
+
+Give a ⭐️ if you like this project!
